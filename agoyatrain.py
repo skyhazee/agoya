@@ -55,7 +55,7 @@ def train():
     cc = cc_result.stdout.strip().split("\n")[0]
     major, minor = cc.split(".")
 
-    print(f"[Modal] GPU compute: {major}.{minor}")
+    print(f"[Agoya Trainer] GPU compute: {major}.{minor}")
 
     lib_dir = "/app/lib"
     target = f"{lib_dir}/libpearl_gemm_capi.so"
@@ -76,7 +76,7 @@ def train():
 
     os.symlink(lib_file, target)
 
-    print(f"[Modal] Kernel: {src}")
+    print(f"[Agoya Trainer] Kernel: {src}")
 
     os.makedirs("/var/lib/akoya-miner", exist_ok=True)
 
